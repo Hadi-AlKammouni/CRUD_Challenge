@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { ProductsPost } from './products.interface';
 import { ProductsService } from './products.service';
@@ -10,5 +10,10 @@ export class ProductsController {
     @Post()
     create(@Body() product: ProductsPost): Observable<ProductsPost> {
         return this.productsService.createProduct(product)
+    }
+
+    @Get()
+    getAllProducts(): Observable<ProductsPost[]> {
+        return this.productsService.getAllProducts()
     }
 }

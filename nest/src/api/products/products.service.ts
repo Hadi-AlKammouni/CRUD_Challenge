@@ -15,4 +15,8 @@ export class ProductsService {
     createProduct( productsPost: ProductsPost ):Observable<ProductsPost> {
         return from(this.productsPostRepository.save(productsPost))
     }
+
+    getAllProducts() :Observable<Products[]> {
+        return from(this.productsPostRepository.find())
+    }
 }
