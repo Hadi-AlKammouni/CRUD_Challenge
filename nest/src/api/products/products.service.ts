@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Observable, from } from 'rxjs';
-import { Repository, UpdateResult } from 'typeorm';
+import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { Products } from './products.entity';
 import { ProductsPost } from './products.interface';
 
@@ -22,5 +22,9 @@ export class ProductsService {
 
     updateProduct(id: number, productsPost: ProductsPost): Observable<UpdateResult> {
         return from(this.productsPostRepository.update(id, productsPost))
+    }
+
+    deleteProduct(id: number): Observable<DeleteResult> {
+        return from(this.productsPostRepository.delete(id))
     }
 }

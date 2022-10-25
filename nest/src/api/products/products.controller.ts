@@ -1,6 +1,6 @@
-import { Controller, Post, Body, Get, Put, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Put, Param, Delete } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { UpdateResult } from 'typeorm';
+import { DeleteResult, UpdateResult } from 'typeorm';
 import { ProductsPost } from './products.interface';
 import { ProductsService } from './products.service';
 
@@ -23,6 +23,11 @@ export class ProductsController {
         @Param('id') id: number,
         @Body() productsPost: ProductsPost
     ): Observable<UpdateResult> {
-        return this.productsService.updateProduct(id, productsPost)
+            return this.productsService.updateProduct(id, productsPost)
+        }
+        
+    @Delete(':id')
+    deleteProduct( @Param('id') id: number ): Observable<DeleteResult> {
+        return this.productsService.deleteProduct(id)
     }
 }
