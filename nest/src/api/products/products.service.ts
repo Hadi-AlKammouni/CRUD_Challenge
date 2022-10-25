@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Observable, from } from 'rxjs';
-import { Repository } from 'typeorm';
+import { Repository, UpdateResult } from 'typeorm';
 import { Products } from './products.entity';
 import { ProductsPost } from './products.interface';
 
@@ -18,5 +18,9 @@ export class ProductsService {
 
     getAllProducts() :Observable<Products[]> {
         return from(this.productsPostRepository.find())
+    }
+
+    updateProduct(id: number, productsPost: ProductsPost): Observable<UpdateResult> {
+        return from(this.productsPostRepository.update(id, productsPost))
     }
 }
