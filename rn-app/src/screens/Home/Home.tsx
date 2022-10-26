@@ -18,6 +18,9 @@ const Home = () => {
                     <Image source={require("../../assets/icons8-search-48.png")} resizeMode='contain' style={styles.icon}/>
                     <TextInput style={styles.input} placeholder="Search" />
                 </View>
+                <View style={styles.sort_btn}>
+                    <Image source={require("../../assets/icons8-ascending-sorting-48.png")} resizeMode='contain' style={styles.icon}/>
+                </View>
             </View>
         </SafeAreaView>
     )

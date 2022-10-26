@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   search_container: {
     height: 50,
-    backgroundColor: "#ccc",
+    backgroundColor: "#eaebec",
     borderRadius: 10,
     flex: 1,
     flexDirection: 'row',
@@ -39,8 +39,17 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#eaebec',
     flex: 1
+  },
+  sort_btn: {
+    marginLeft: 10,
+    height: 50,
+    width: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#5f96ec',
+    borderRadius: 15
   }
 });
 
