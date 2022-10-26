@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, View, Text, Image, TextInput } from "react-native";
+import { SafeAreaView, View, Text, Image, TextInput, FlatList } from "react-native";
 import { showMessage } from "react-native-flash-message";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -26,8 +26,27 @@ const Home = () => {
                 type: "danger",
             });
         }
-    
     }
+
+    const Card = ({product}: {product: any}) => {
+        return (
+            <>
+            <View style={styles.card}>
+                <View style={styles.product_img_view}>
+                    <Image style={styles.product_img} source={{uri: product.image}}/>
+                </View>
+                <Text style={styles.product_name}>{product.name}</Text>
+                <View style={styles.product_details}>
+                    <Text style={styles.product_price}>${product.price}</Text>
+                    <View style={styles.add_view}>
+                        <Text style={styles.plus}>+</Text>
+                    </View>
+                </View>
+            </View>
+            </>
+        )
+    }
+
     useEffect(() => {
         getProducts();
     }, []);
@@ -50,6 +69,17 @@ const Home = () => {
                     <Image source={require("../../assets/icons8-ascending-sorting-48.png")} resizeMode='contain' style={styles.icon}/>
                 </View>
             </View>
+            <FlatList 
+                columnWrapperStyle={{justifyContent: 'space-between'}}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={{
+                    marginTop: 15,
+                    paddingBottom: 50
+                }}
+                numColumns={2} 
+                data={products} 
+                renderItem={({item}) => <Card product={item}/>}
+            />
         </SafeAreaView>
     )
 }

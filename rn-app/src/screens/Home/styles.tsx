@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
+
+const width = Dimensions.get('screen').width/2-30
 
 const styles = StyleSheet.create({
   major_header: {
@@ -50,6 +52,53 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#5f96ec',
     borderRadius: 15
+  },
+  card: {
+    height: 225,
+    backgroundColor: '#eaebec',
+    width: width,
+    marginHorizontal: 2,
+    marginBottom: 20,
+    padding: 15,
+    borderRadius: 10,
+  },
+  product_img_view: {
+    height: 110,
+    alignItems: 'center'
+  },
+  product_img: {
+    flex: 1, 
+    height:100,
+    width:120,
+    resizeMode: 'contain',
+    borderRadius: 15
+  },
+  product_name: {
+    fontWeight: 'bold', 
+    fontSize: 17, 
+    marginTop:20
+  },
+  product_details: {
+    flexDirection: 'row', 
+    justifyContent:"space-between", 
+    marginTop: 5
+  },
+  product_price: {
+    fontSize: 19, 
+    fontWeight: 'bold'
+  },
+  add_view: {
+    height: 40, 
+    width: 40, 
+    backgroundColor: '#5f96ec', 
+    borderRadius: 5, 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
+  plus: {
+    fontSize: 22, 
+    color: '#fff', 
+    fontWeight: 'bold'
   }
 });
 
