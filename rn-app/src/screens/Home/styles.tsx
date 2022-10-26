@@ -20,10 +20,27 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: "#5f96ec"
   },
-  cart: {
+  icon: {
     width: 40,
     height: 40,
-    marginTop: 9
+  },
+  search: {
+    marginTop: 30,
+    flexDirection: 'row'
+  },
+  search_container: {
+    height: 50,
+    backgroundColor: "#ccc",
+    borderRadius: 10,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  input: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#000',
+    flex: 1
   }
 });
 

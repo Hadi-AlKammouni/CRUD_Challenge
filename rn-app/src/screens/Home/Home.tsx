@@ -1,5 +1,6 @@
 import React from "react";
-import { SafeAreaView, View, Text, Image } from "react-native";
+import { SafeAreaView, View, Text, Image, TextInput } from "react-native";
+
 import styles from "./styles";
 
 const Home = () => {
@@ -10,7 +11,13 @@ const Home = () => {
                     <Text style={styles.welcome}>Welcome to</Text>
                     <Text style={styles.title}>Fleet</Text>
                 </View>
-                <Image source={require("../../assets/icons8-shopping-cart-48.png")} resizeMode='contain' style={styles.cart}/>
+                <Image source={require("../../assets/icons8-shopping-cart-48.png")} resizeMode='contain' style={styles.icon}/>
+            </View>
+            <View style={styles.search}>
+                <View style={styles.search_container}>
+                    <Image source={require("../../assets/icons8-search-48.png")} resizeMode='contain' style={styles.icon}/>
+                    <TextInput style={styles.input} placeholder="Search" />
+                </View>
             </View>
         </SafeAreaView>
     )
