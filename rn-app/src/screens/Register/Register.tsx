@@ -9,7 +9,7 @@ import PasswordInputField from '../../components/PasswordInputField';
 import ButtonComponent from '../../components/ButtonComponent';
 import styles from './styles';
 
-const Register = () => {
+const Register = ({navigation}: {navigation: any}) => {
 
   const [name, SetName] = useState('')   
   const [email, SetEmail] = useState('')   
@@ -37,9 +37,10 @@ const Register = () => {
         });
       } else {
         showMessage({
-          message: `Welcome ${data.name}`,
+          message: `Registered successfully.`,
           type: "success",
         });
+        navigation.navigate('Login')
       }
       
     } catch (error) {

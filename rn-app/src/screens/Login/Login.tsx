@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { showMessage } from "react-native-flash-message";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import TextInputField from '../../components/TextInputField';
 import PasswordInputField from '../../components/PasswordInputField';
@@ -38,6 +39,7 @@ const Login = () => {
           message: `Successfully logged in.`,
           type: "success",
         });
+        await AsyncStorage.setItem('token',data.token);
       }
       
     } catch (error) {
