@@ -14,6 +14,40 @@ const Login = () => {
   const [email, SetEmail] = useState('')   
   const [password, setPassword] = useState('')
 
+  const login = async () => {
+    try {
+      const response = await fetch(`http://192.168.0.103:3000/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password
+        })
+      })
+
+      const data = await response.json();
+      if (data.statusCode === 404) {
+        showMessage({
+          message: `Wrong email and/or password.`,
+          type: "warning",
+        });
+      } else {
+        showMessage({
+          message: `Successfully logged in.`,
+          type: "success",
+        });
+      }
+      
+    } catch (error) {
+      showMessage({
+        message: "Something went wrong.",
+        type: "danger",
+      });
+    }
+  }
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor='#FDBE3B' />
@@ -50,16 +84,16 @@ const Login = () => {
             border_color="#AAA8A8"
             text_style={styles.text_sign}
             text_color="#FFFFFF"
-            text="Register"
+            text="Log In"
           />
         :
           <ButtonComponent 
-            onPress={() => console.log("logged in")}
+            onPress={() => login()}
             touchable_style={styles.button}
             border_color="#205bb7"
             text_style={styles.text_sign}
             text_color="#FFFFFF"
-            text="Register"
+            text="Log In"
           />
         }
 
