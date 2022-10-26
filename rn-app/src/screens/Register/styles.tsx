@@ -21,6 +21,27 @@ const styles = StyleSheet.create({
   logo: {
     width: 150,
     height: 120
+  },
+  disable_button: {
+    justifyContent:'center',
+    alignItems: 'center',
+    marginTop: 50,
+    backgroundColor: "#AAA8A8",
+    height: 50,
+    borderRadius:15
+  },
+  text_sign: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    color: 'white'
+  },
+  button: {
+    justifyContent:'center',
+    alignItems: 'center',
+    marginTop: 50,
+    backgroundColor: "#5f96ec",
+    height: 50,
+    borderRadius:15
   }
 });
 
