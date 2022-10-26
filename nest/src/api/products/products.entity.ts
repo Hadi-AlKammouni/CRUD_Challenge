@@ -13,4 +13,7 @@ export class Products {
 
   @Column({ type: 'integer' })
   public price: number;
+
+  @Column({ type: 'varchar' })
+  public image: string;
 }
