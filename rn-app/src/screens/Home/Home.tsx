@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { SafeAreaView, View, Text, Image, TextInput, FlatList } from "react-native";
+import { SafeAreaView, View, Text, Image, TextInput, FlatList, TouchableOpacity } from "react-native";
 import { showMessage } from "react-native-flash-message";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import styles from "./styles";
 
-const Home = () => {
+const Home = ({navigation}: {navigation: any}) => {
 
     const [products, setProducts] = useState([])
 
@@ -31,18 +31,20 @@ const Home = () => {
     const Card = ({product}: {product: any}) => {
         return (
             <>
-            <View style={styles.card}>
-                <View style={styles.product_img_view}>
-                    <Image style={styles.product_img} source={{uri: product.image}}/>
-                </View>
-                <Text style={styles.product_name}>{product.name}</Text>
-                <View style={styles.product_details}>
-                    <Text style={styles.product_price}>${product.price}</Text>
-                    <View style={styles.add_view}>
-                        <Text style={styles.plus}>+</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("ProductDetails",product)}>
+                <View style={styles.card}>
+                    <View style={styles.product_img_view}>
+                        <Image style={styles.product_img} source={{uri: product.image}}/>
+                    </View>
+                    <Text style={styles.product_name}>{product.name}</Text>
+                    <View style={styles.product_details}>
+                        <Text style={styles.product_price}>${product.price}</Text>
+                        <View style={styles.add_view}>
+                            <Text style={styles.plus}>+</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
+            </TouchableOpacity>
             </>
         )
     }
