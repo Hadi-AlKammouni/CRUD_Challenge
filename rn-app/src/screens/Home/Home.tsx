@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { SafeAreaView, View, Text, Image, TextInput } from "react-native";
+import { showMessage } from "react-native-flash-message";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import styles from "./styles";
 
 const Home = () => {
+
+    const [products, setProducts] = useState([])
+
+    const getProducts = async () => {
+        try {
+            const token = await AsyncStorage.getItem('token')
+            const response = await fetch(`http://192.168.0.103:3000/products`,{
+                headers: {
+                  'x-access-token': token,
+                  'Content-Type': 'application/json'
+                },
+            });
+            const data = await response.json();
+            setProducts(data)
+        } catch (error) {
+            showMessage({
+                message: "Something went wrong.",
+                type: "danger",
+            });
+        }
+    
+    }
+    useEffect(() => {
+        getProducts();
+    }, []);
+
     return (
         <SafeAreaView style={styles.major_header}>
             <View style={styles.minor_header}>
