@@ -10,8 +10,8 @@ const Navigator = () => {
 
     return(
         <RootStack.Navigator screenOptions={{headerShown:false}}>
-            <RootStack.Screen name="Login" component={Login} />
             <RootStack.Screen name="Register" component={Register} />
+            <RootStack.Screen name="Login" component={Login} />
         </RootStack.Navigator>
     )
 }
