@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Text, View, Image, TextInput } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 
+import styles from "./styles";
+
 const TextInputField = (
         { label, main_icon, placeholder, helper_icon, margin, setState }: 
-        { label: String, main_icon: any, placeholder: any, helper_icon: any, margin: String, setState: any }
+        { label: String, main_icon: any, placeholder: any, helper_icon: any, margin: any, setState: any }
     ) => {
 
     const [data,setdata] = useState({
@@ -23,8 +25,8 @@ const TextInputField = (
 
     return (
       <>
-      <Text>{label}</Text>
-      <View>
+      <Text style={[styles.text_footer, {marginTop:margin}]}>{label}</Text>
+      <View style={styles.action}>
         <Image 
           source={main_icon}
           resizeMode='contain'
@@ -32,6 +34,7 @@ const TextInputField = (
         />
         <TextInput 
           placeholder={placeholder} 
+          style={styles.text_input}
           autoCapitalize="none"
           onChangeText={(val) => InputChange(val)}
         />
