@@ -12,7 +12,7 @@ const ButtonComponent = (
         onPress={onPress}
         style={[
           touchable_style,
-          {borderColor:border_color,borderWidth: 1,marginTop: 30}
+          {borderColor:border_color,borderWidth: 1,marginTop: 50}
         ]}
       >
         <Text style={[text_style,{color:text_color}]}>

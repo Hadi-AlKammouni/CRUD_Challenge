@@ -6,14 +6,50 @@ import { showMessage } from "react-native-flash-message";
 
 import TextInputField from '../../components/TextInputField';
 import PasswordInputField from '../../components/PasswordInputField';
-import styles from './styles';
 import ButtonComponent from '../../components/ButtonComponent';
+import styles from './styles';
 
 const Register = () => {
 
   const [name, SetName] = useState('')   
   const [email, SetEmail] = useState('')   
   const [password, setPassword] = useState('')
+
+  const register = async () => {
+    try {
+      const response = await fetch(`http://192.168.0.103:3000/auth/register`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          password: password,
+        })
+      })
+
+      const data = await response.json();
+      if (data.statusCode === 409) {
+        showMessage({
+          message: `Email already exists.`,
+          type: "warning",
+        });
+      } else {
+        showMessage({
+          message: `Welcome ${data.name}`,
+          type: "success",
+        });
+      }
+      
+    } catch (error) {
+      showMessage({
+        message: "Something went wrong.",
+        type: "danger",
+      });
+    }
+
+  }
   
   return (
     <View style={styles.container}>
@@ -63,7 +99,7 @@ const Register = () => {
           />
         :
           <ButtonComponent 
-            onPress={() => console.log("Registered")}
+            onPress={() => register()}
             touchable_style={styles.button}
             border_color="#205bb7"
             text_style={styles.text_sign}
