@@ -26,7 +26,7 @@ const PasswordInputField = (
 
     return (
         <>
-          <Text style={[styles.text_footer, {marginTop: 35}]}>{label}</Text>
+          <Text style={[styles.text_footer, {marginTop: 15}]}>{label}</Text>
           <View style={styles.action}>
             <Image 
                 source={main_icon}

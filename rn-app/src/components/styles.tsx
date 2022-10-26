@@ -8,13 +8,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 10,
         borderBottomWidth: 1,
-        borderBottomColor: '#FDBE3B',
+        borderBottomColor: '#5f96ec',
         paddingBottom: 5
     },
     text_input: {
         flex: 1,
         paddingLeft: 10
     }
-  });
+});
 
 export default styles;

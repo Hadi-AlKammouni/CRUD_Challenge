@@ -27,7 +27,6 @@ const Register = () => {
           placeholder="Enter Your Name"
           helper_icon={require("../../assets/icons8-checkmark-32.png")}
           setState={SetName} 
-          margin={undefined}
         />
   
         <TextInputField 
@@ -36,15 +35,14 @@ const Register = () => {
           placeholder="Enter Your Email"
           helper_icon={require("../../assets/icons8-checkmark-32.png")}
           setState={SetEmail}
-          margin={undefined}
         />
   
         <PasswordInputField
           label="Password"
           main_icon={require("../../assets/icons8-lock-32.png")}
           placeholder="Enter Your Password"
-          helper_icon1={require("../../assets/icons8-eye-32.png")}
-          helper_icon2={require("../../assets/icons8-closed-eye-32.png")}
+          helper_icon1={require("../../assets/icons8-surprise-64.png")}
+          helper_icon2={require("../../assets/icons8-closed-eye-64.png")}
           setState={setPassword}
         />
   
