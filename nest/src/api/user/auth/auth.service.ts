@@ -46,7 +46,7 @@ export class AuthService {
 
     this.repository.update(user.id, { lastLoginAt: new Date() });
 
-    return {status: 400, token: this.helper.generateToken(user)};
+    return {status: 200, token: this.helper.generateToken(user)};
   }
 
   public async refresh(user: User): Promise<string> {
