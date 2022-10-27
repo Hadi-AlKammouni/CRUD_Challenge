@@ -40,7 +40,22 @@ const Cart = ({navigation}: {navigation: any}) => {
         )
     }
 
+    const displayBill = () => {
+        var bill = 0
+        cartItems.map((product: { price: number; }) => {
+            bill += product.price
+        })
+        return (
+            <TouchableOpacity>
+                <View style={styles.bill_container}>
+                    <Text style={styles.bill}>Your total bill = ${bill}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+    }
+
     return (
+        <>
         <SafeAreaView style={styles.container}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -50,10 +65,13 @@ const Cart = ({navigation}: {navigation: any}) => {
                         style={styles.icon}
                     />
                 </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                    <Image source={require("../../assets/icons8-home-page-40.png")} resizeMode='contain' style={styles.icon}/>
+                </TouchableOpacity>
             </View>
             {cartItems.length === 0 ?
                 <View style={styles.title_header}>
-                        <Text style={styles.title}>Your didn't pick any product yet!</Text>
+                        <Text style={styles.title}>Your didn't pick any product!</Text>
                 </View>
             :
                 <>
@@ -69,9 +87,11 @@ const Cart = ({navigation}: {navigation: any}) => {
                     data={cartItems} 
                     renderItem={({item}) => <Card product={item}/>}
                     />
+                {displayBill()}
                 </>
             }
         </SafeAreaView>
+        </>
     )
 }
 

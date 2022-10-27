@@ -96,6 +96,18 @@ const styles = StyleSheet.create({
         marginHorizontal: 10, 
         fontWeight: 'bold'
     },
+    bill_container: {
+        bottom: 10,
+        borderRadius: 15,
+        backgroundColor: '#5f96ec',
+        height: 50,
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+    bill: {
+        fontSize: 18,
+        fontWeight: 'bold'
+    }
 });
 
 export default styles;
