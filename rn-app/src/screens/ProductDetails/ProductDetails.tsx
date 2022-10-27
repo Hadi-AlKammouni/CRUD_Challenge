@@ -18,7 +18,9 @@ const ProductDetails = ({navigation, route}: {navigation: any, route:any}) => {
                         style={styles.icon}
                     />
                 </TouchableOpacity>
-                <Image source={require("../../assets/icons8-shopping-cart-48.png")} resizeMode='contain' style={styles.icon}/>
+                <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
+                    <Image source={require("../../assets/icons8-shopping-cart-48.png")} resizeMode='contain' style={styles.icon}/>
+                </TouchableOpacity>
             </View>
             <View style={styles.img_container}>
                 <Image style={styles.img} source={{uri: product.image}}/>

@@ -72,7 +72,9 @@ const Home = ({navigation}: {navigation: any}) => {
                     <Text style={styles.welcome}>Welcome to</Text>
                     <Text style={styles.title}>Fleet</Text>
                 </View>
-                <Image source={require("../../assets/icons8-shopping-cart-48.png")} resizeMode='contain' style={styles.icon}/>
+                <TouchableOpacity onPress={() => navigation.navigate('Cart')}>
+                    <Image source={require("../../assets/icons8-shopping-cart-48.png")} resizeMode='contain' style={styles.icon}/>
+                </TouchableOpacity>
             </View>
             <View style={styles.search}>
                 <View style={styles.search_container}>
