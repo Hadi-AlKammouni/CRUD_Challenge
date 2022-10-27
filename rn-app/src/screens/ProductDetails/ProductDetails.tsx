@@ -1,8 +1,9 @@
-import React from "react"
-import { View, Text, SafeAreaView, Image, TouchableOpacity } from "react-native"
+import React from "react";
+import { View, Text, SafeAreaView, Image, TouchableOpacity } from "react-native";
 
-import { useCart } from "../../context/Cart"
-import styles from "./styles"
+import { useCart } from "../../context/Cart";
+import styles from "./styles";
+
 const ProductDetails = ({navigation, route}: {navigation: any, route:any}) => {
     
     const product = route.params

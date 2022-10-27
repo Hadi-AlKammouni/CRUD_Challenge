@@ -100,8 +100,7 @@ const Cart = ({navigation}: {navigation: any}) => {
 
     useEffect(()=> {
         calculateBill()   
-        const editted_products = cartItems
-        editted_products.map((product: {[x: string]: number; price: any; }) => {
+        cartItems.map((product: {[x: string]: number; price: any; }) => {
             product.quantity = 1
         })
     },[])

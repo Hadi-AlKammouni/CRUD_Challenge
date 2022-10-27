@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, TouchableOpacity} from 'react-native';
 
 const ButtonComponent = (
-        { touchable_style, border_color, text_style, text_color, text, onPress }:
-        { touchable_style: any, border_color: any, text_style: any, text_color: any, text: any, onPress: any }
+      { touchable_style, border_color, text_style, text_color, text, onPress }:
+      { touchable_style: any, border_color: any, text_style: any, text_color: any, text: any, onPress: any }
     ) => {
 
   return (

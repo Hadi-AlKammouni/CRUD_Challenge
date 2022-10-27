@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#eaebec',
+    color: '#000',
     flex: 1
   },
   sort_btn: {
