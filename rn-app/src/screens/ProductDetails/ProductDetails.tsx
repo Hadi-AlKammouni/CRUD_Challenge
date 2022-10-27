@@ -35,17 +35,6 @@ const ProductDetails = ({navigation, route}: {navigation: any, route:any}) => {
                 <View style={styles.desc_container}>
                     <Text>Description:</Text>
                     <Text style={styles.desc}>{product.description}</Text>
-                    {/* <View style={styles.quantity_container}>
-                        <View style={styles.quantity_view}>
-                            <View style={styles.btn_view}>
-                                <Text style={styles.sign}>-</Text>
-                            </View>
-                            <Text style={styles.quantity}>1</Text>
-                            <View style={styles.btn_view}>
-                                <Text style={styles.sign}>+</Text>
-                            </View>
-                        </View>
-                    </View> */}
                     <View style={styles.btn}>
                         {cartItems.includes(product) ?
                             <TouchableOpacity onPress={() => setCartItems(cartItems.filter((item: { id: any; }) => item.id !== product.id))}>

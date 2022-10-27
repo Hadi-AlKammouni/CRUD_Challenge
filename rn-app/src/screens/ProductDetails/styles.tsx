@@ -73,32 +73,6 @@ const styles = StyleSheet.create({
         fontSize: 25,
         marginTop: 5
     },
-    quantity_container: {
-        marginTop: 50, 
-    },
-    quantity_view: {
-        flexDirection: 'row', 
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    btn_view: {
-        borderColor: '#5f96ec', 
-        borderWidth: 1, 
-        borderRadius: 5, 
-        height: 45, 
-        width: 60, 
-        justifyContent: 'center', 
-        alignItems: 'center'
-    },
-    sign: {
-        fontWeight: 'bold', 
-        fontSize: 28
-    },
-    quantity: {
-        fontSize: 20, 
-        marginHorizontal: 10, 
-        fontWeight: 'bold'
-    },
     add_view: {
         height: 50, 
         backgroundColor: "#5f96ec", 
