@@ -77,6 +77,11 @@ const styles = StyleSheet.create({
         fontSize: 22, 
         fontWeight: 'bold'
     },
+    add_remove_sign_disable: {
+        fontSize: 22, 
+        fontWeight: 'bold',
+        color: "#ccc"
+    },
     quantity_view: {
         flexDirection: 'row', 
         alignItems: 'center',

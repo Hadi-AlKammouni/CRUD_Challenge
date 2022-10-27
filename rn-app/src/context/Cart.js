@@ -5,10 +5,11 @@ export const CartContext = React.createContext();
 const CartProvider = ({children}) => {
     
     const [cartItems, setCartItems] = useState([])
+    const [billTotal, setBillTotal] = useState(0)
 
     return (
         <CartContext.Provider 
-        value={{cartItems, setCartItems}}>
+        value={{cartItems, setCartItems, billTotal, setBillTotal}}>
 
             {children}
 
@@ -19,10 +20,10 @@ const CartProvider = ({children}) => {
 export default CartProvider;
 
 export const useCart = () => {
-    const {cartItems, setCartItems} = React.useContext(CartContext)
+    const {cartItems, setCartItems, billTotal, setBillTotal} = React.useContext(CartContext)
 
     return {
-        cartItems, setCartItems
+        cartItems, setCartItems, billTotal, setBillTotal
     }
 }
 // only this is made as .js extension
