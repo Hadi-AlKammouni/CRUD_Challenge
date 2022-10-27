@@ -42,6 +42,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#5f96ec",
     height: 50,
     borderRadius:15
+  },
+  extra_btn: {
+    justifyContent:'center',
+    alignItems: 'center',
+    backgroundColor: "#1E21AD",
+    height: 50,
+    borderRadius:15
   }
 });
 

@@ -100,6 +100,15 @@ const Login = ({navigation}: {navigation: any}) => {
           />
         }
 
+        <ButtonComponent 
+          onPress={() => navigation.navigate("Register")}
+          touchable_style={styles.extra_btn}
+          border_color="#205bb7"
+          text_style={styles.text_sign}
+          text_color="#FFFFFF"
+          text="New here? Register"
+        />
+
         <StatusBar style="auto" />
       </Animatable.View>
     </View>
