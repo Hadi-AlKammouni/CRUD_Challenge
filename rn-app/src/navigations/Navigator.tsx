@@ -6,6 +6,7 @@ import { showMessage } from "react-native-flash-message";
 import Login from "../screens/Login/Login";
 import Register from "../screens/Register/Register";
 import User from "./User";
+import Home from "../screens/Home/Home";
 
 const RootStack = createStackNavigator();
 
@@ -35,6 +36,7 @@ const Navigator = () => {
                 <>
                 <RootStack.Screen name="Register" component={Register} />
                 <RootStack.Screen name="Login" component={Login} />
+                <RootStack.Screen name="Home" component={Home} />
                 </>
             :
                 <RootStack.Screen name="User" component={User} />

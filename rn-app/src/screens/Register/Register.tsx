@@ -17,7 +17,7 @@ const Register = ({navigation}: {navigation: any}) => {
 
   const register = async () => {
     try {
-      const response = await fetch(`http://192.168.0.103:3000/auth/register`, {
+      const response = await fetch(`http://192.168.0.106:3000/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

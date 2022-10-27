@@ -10,14 +10,14 @@ import PasswordInputField from '../../components/PasswordInputField';
 import ButtonComponent from '../../components/ButtonComponent';
 import styles from './styles';
 
-const Login = () => {
+const Login = ({navigation}: {navigation: any}) => {
 
   const [email, SetEmail] = useState('')   
   const [password, setPassword] = useState('')
 
   const login = async () => {
     try {
-      const response = await fetch(`http://192.168.0.103:3000/auth/login`, {
+      const response = await fetch(`http://192.168.0.106:3000/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -40,6 +40,7 @@ const Login = () => {
           type: "success",
         });
         await AsyncStorage.setItem('token',data.token);
+        navigation.navigate('Home')
       }
       
     } catch (error) {

@@ -12,7 +12,7 @@ const Home = ({navigation}: {navigation: any}) => {
     const getProducts = async () => {
         try {
             const token = await AsyncStorage.getItem('token')
-            const response = await fetch(`http://192.168.0.103:3000/products`,{
+            const response = await fetch(`http://192.168.0.106:3000/products`,{
                 headers: {
                   'x-access-token': token,
                   'Content-Type': 'application/json'
