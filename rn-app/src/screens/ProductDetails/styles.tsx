@@ -16,20 +16,20 @@ const styles = StyleSheet.create({
         height: 40,
     },
     img_container: {
-        flex: 0.45,
-        marginTop: 20,
+        flex: 0.55,
+        marginTop: 5,
         justifyContent: 'center',
         alignItems: 'center'
     },
     img: {
         resizeMode: 'contain',
         flex: 1,
-        height:220,
-        width: 220,
+        height:250,
+        width: 250,
         borderRadius: 15
     },
     details_container: {
-        flex: 0.55,
+        flex: 0.45,
         backgroundColor: "#eaebec",
         marginHorizontal: 7,
         marginBottom: 7,
@@ -107,10 +107,21 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         marginTop: 30
     },
+    remove_view: {
+        height: 50, 
+        backgroundColor: "#FF0000", 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        borderRadius: 30,
+        marginTop: 30
+    },
     add_text: {
         color: '#fff', 
         fontSize: 18, 
         fontWeight:'bold'
+    },
+    btn: {
+        marginTop: 50
     }
 });
 

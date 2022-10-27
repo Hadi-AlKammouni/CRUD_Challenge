@@ -48,7 +48,6 @@ const Home = ({navigation}: {navigation: any}) => {
                             </View>
                             </TouchableOpacity>
                         :
-
                             <TouchableOpacity onPress={() => setCartItems([...cartItems,product])}>
                                 <View style={styles.add_view}>
                                     <Text style={styles.sign}>+</Text>
