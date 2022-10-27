@@ -95,7 +95,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center', 
     alignItems: 'center',
   },
-  plus: {
+  remove_view: {
+    height: 40, 
+    width: 40, 
+    backgroundColor: '#FF0000', 
+    borderRadius: 5, 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  },
+  sign: {
     fontSize: 22, 
     color: '#fff', 
     fontWeight: 'bold'

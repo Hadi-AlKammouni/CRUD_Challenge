@@ -4,10 +4,12 @@ import { showMessage } from "react-native-flash-message";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import styles from "./styles";
+import { useCart } from "../../context/Cart";
 
 const Home = ({navigation}: {navigation: any}) => {
 
     const [products, setProducts] = useState([])
+    const {cartItems, setCartItems} = useCart()
 
     const getProducts = async () => {
         try {
@@ -39,9 +41,20 @@ const Home = ({navigation}: {navigation: any}) => {
                     <Text style={styles.product_name}>{product.name}</Text>
                     <View style={styles.product_details}>
                         <Text style={styles.product_price}>${product.price}</Text>
-                        <View style={styles.add_view}>
-                            <Text style={styles.plus}>+</Text>
-                        </View>
+                        {cartItems.includes(product) ?
+                            <TouchableOpacity onPress={() => setCartItems(cartItems.filter((item: { id: any; }) => item.id !== product.id))}>
+                            <View style={styles.remove_view}>
+                                <Text style={styles.sign}>x</Text>
+                            </View>
+                            </TouchableOpacity>
+                        :
+
+                            <TouchableOpacity onPress={() => setCartItems([...cartItems,product])}>
+                                <View style={styles.add_view}>
+                                    <Text style={styles.sign}>+</Text>
+                                </View>
+                            </TouchableOpacity>
+                        }
                     </View>
                 </View>
             </TouchableOpacity>
